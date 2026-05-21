@@ -12,7 +12,7 @@
 <header class="page-header">
   <a href="index.html" class="back-link">← PadelTap</a>
   <h1>Privacy Policy</h1>
-  <p class="effective-date">Effective May 16, 2026</p>
+  <p class="effective-date">Effective May 21, 2026</p>
 </header>
 
 <main class="legal">
@@ -25,10 +25,11 @@
   <h3>Apple Health</h3>
   <p>With your permission, PadelTap:</p>
   <ul>
-    <li><strong>Reads</strong> your heart rate and active energy burned during a match.</li>
-    <li><strong>Writes</strong> each match as a Tennis workout, so it appears in your Apple Health and Fitness apps alongside your other activity.</li>
+    <li><strong>Reads on the watch (during a match)</strong> your heart rate and active energy burned, so the live courtside scoreboard and the saved workout show your effort.</li>
+    <li><strong>Reads on the iPhone (around match dates, for analytics correlation)</strong> your sleep duration, resting heart rate, walking heart rate, HR variability (SDNN), VO2 max, blood oxygen saturation, and mindfulness minutes. These drive the Stats tab's Sleep Impact chart, Physiology Trend, and Today's Outlook readiness card. PadelTap may also read your date of birth (if available) to estimate your age-based maximum heart rate for the Heart Rate Zones display.</li>
+    <li><strong>Writes</strong> each match as a Tennis workout (including the GPS route when location is granted), so it appears in your Apple Health and Fitness apps alongside your other activity.</li>
   </ul>
-  <p>You can revoke this access at any time in <em>Settings → Health → Data Access &amp; Devices → PadelTap</em>.</p>
+  <p>All Health data stays on your device — none of it is transmitted anywhere by PadelTap. You can revoke access at any time in <em>Settings → Health → Data Access &amp; Devices → PadelTap</em>; declining or revoking still leaves every non-Health feature working.</p>
 
   <h3>Location</h3>
   <p>When you start a workout, PadelTap requests one location sample with "When in Use" permission. That single sample is attached to the Apple Health workout entry as its location, so the workout shows a small map marker indicating roughly where you played. Location is not stored in any other form, is not tracked continuously, and is not shared anywhere.</p>
@@ -37,7 +38,10 @@
   <p>If a location sample is available, PadelTap fetches the current temperature and humidity at that location via Apple WeatherKit. These values are attached as workout metadata so they appear in the Apple Health workout entry. WeatherKit requests are handled by Apple under their privacy terms; PadelTap does not log or store the values separately.</p>
 
   <h3>Player names and match data</h3>
-  <p>Player names, team names, set scores, point sequences, and venue labels are entered by you and stored only on your device in Apple's SwiftData on-device store.</p>
+  <p>Player names, team names, set scores, point sequences, and venue labels are entered by you and stored on your device in Apple's SwiftData on-device store. On the iPhone, that store mirrors to <em>your own</em> private iCloud database (container <code>iCloud.com.matankeret.PadelTap</code>) so your match history survives device migrations and follows your Apple ID. No one but you has access to it — Apple's iCloud privacy terms govern that mirror, and PadelTap has no server-side component to which any of this could be sent. The Apple Watch persists locally only.</p>
+
+  <h3>On-device AI</h3>
+  <p>The Match Recap card and the AI Coach chat sheet use Apple's on-device language model (Apple Intelligence, available on iPhone 15 Pro and newer with iOS 26). Your match history and recent Health signals form the input to the model, which generates responses entirely on your device — no prompt, no match data, and no Health data is sent to Apple, OpenAI, or any other service. On devices without Apple Intelligence, the same surfaces show a deterministic template summary computed locally from the same data.</p>
 
   <h2>What PadelTap does <em>not</em> do</h2>
   <ul>
@@ -51,7 +55,7 @@
   <h2>Where your data lives</h2>
   <ul>
     <li><strong>On your Apple Watch.</strong> Match data is saved in the watch's own local SwiftData store. It is synced to your paired iPhone using Apple's WatchConnectivity framework, which is a direct local link between your two devices and does not go through any network or cloud service.</li>
-    <li><strong>On your iPhone.</strong> A copy of your match history, plus any player names and venue labels you've added, is stored in the iPhone's local SwiftData store. Names and venues are iPhone-only; they do not sync back to the watch.</li>
+    <li><strong>On your iPhone.</strong> A copy of your match history, plus any player names and venue labels you've added, is stored in the iPhone's local SwiftData store. That store mirrors to <em>your own</em> private iCloud database via CloudKit so re-installing on a new device restores everything via your Apple ID. PadelTap has no servers; the iCloud mirror is direct between your device and Apple's iCloud service.</li>
     <li><strong>Apple Health.</strong> Workouts and the associated heart rate, calorie, location, and weather data are saved by Apple's HealthKit, governed by Apple's privacy controls — not by PadelTap.</li>
   </ul>
 

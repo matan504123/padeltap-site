@@ -75,7 +75,25 @@
   <p>Yes — same Share button in match detail, choose <em>"Share as image"</em>. PadelTap renders a polished summary card (format-tinted background, big score, per-set breakdown, date and venue, plus avg heart rate) and hands it to the system share sheet. Send it anywhere — Messages, Mail, Instagram, anywhere that accepts a picture. Pro feature.</p>
 
   <h3>Can I use PadelTap in Finnish?</h3>
-  <p>Yes — iOS Settings (top of the PadelTap Settings tab) has two independent pickers: <em>App Language</em> for the UI and <em>Language</em> (inside the Voice section) for the courtside voice readout. Both default to "System" so a Finnish-region iPhone gets Finnish UI + Finnish voice automatically; you can override either independently. Watch UI follows your watchOS device language. More languages can be added per request.</p>
+  <p>Yes — both the iPhone and the Apple Watch have their own in-app language pickers with three options: <em>System</em>, <em>English</em>, <em>Suomi</em>. On the iPhone, that's in <em>Settings tab → App Language</em>. On the watch, in <em>Settings → App Language</em>. The watch picker is independent so you can mix-and-match (e.g., Suomi on iPhone, System on watch) — useful when your watchOS device language doesn't match what you want in PadelTap. A separate <em>Voice</em> picker inside the iPhone's Live-tab settings controls the courtside voice readout language. More languages can be added per request.</p>
+
+  <h3>What does the AI Match Recap card show?</h3>
+  <p>Every finished match opens with a 2–3 sentence personalized recap at the top of the detail view. It references your score, your effort (duration, avg HR), and — if you've granted Health access — your physiology that day (sleep, HRV). It's free on every device. On iPhone 15 Pro and newer with iOS 26 and Apple Intelligence enabled, the recap is written by Apple's on-device language model. On older iPhones (13, 14, non-Pro 15) you get a clean deterministic summary computed from the same data, no nag, no upsell. Tap the regenerate button on the card to re-roll the recap.</p>
+
+  <h3>What's the AI Coach?</h3>
+  <p>The sparkles icon at the top of the Stats tab opens a chat sheet. Ask anything about your game — "How did I do this month?", "Which partner do I win with the most?", "Is my fitness trending in the right direction?", "What should I work on?". The coach is given a distilled snapshot of your match history and Health signals at the start of the conversation; it answers using Apple's on-device language model. Nothing leaves your phone. Requires Apple Intelligence (iPhone 15 Pro or newer with iOS 26). Pro feature.</p>
+
+  <h3>How does Today's Outlook work?</h3>
+  <p>At the top of the Stats tab there's a small card that reads your morning Health signals — sleep last night, resting heart rate, HRV — and surfaces a one-line verdict: <em>ready</em>, <em>cautious</em>, or <em>rest</em>. It's a quick gut-check before you head to the court. Requires Health access for sleep + HRV; without those it shows the values it has.</p>
+
+  <h3>What does Sleep Impact show?</h3>
+  <p>A bar chart in the Stats tab that buckets your decided matches by hours of sleep the night before (&lt;6h / 6–7h / 7–8h / 8h+) and shows your win rate in each bucket. Underneath, a one-line interpretation calls out your strongest window (e.g., "You play your best on 7–8h of sleep — 67% win rate"). With fewer than 4 sample matches the chart calls itself out as light on data rather than crowning a window prematurely. Requires Health permission for sleep.</p>
+
+  <h3>What does Physiology Trend show?</h3>
+  <p>Two stacked mini-charts — resting heart rate and VO2 max over the time range — with an interpretive verdict underneath each. Resting HR trending down is usually a good aerobic-fitness signal (highlighted green); trending up suggests fatigue or under-recovery (highlighted orange). VO2 max trending up means improving cardio fitness. Both verdicts only fire with 4+ data points so we're not reading into noise.</p>
+
+  <h3>What are the Achievements?</h3>
+  <p>14 unlockable badges in the Stats tab — first match, three matches in one day, your first hour-long match, winning after 7+ hours of sleep, longest win streak, and more. They unlock automatically; tap the row to expand the gallery.</p>
 
   <h3>What's in the Heart Rate section of a match?</h3>
   <p>The Heart Rate section mirrors what Apple Health shows for a workout: an "Avg Heart Rate" headline, a candle-bar chart of HR over the match (each bar spans the min–max BPM observed in that time bucket), a five-zone time breakdown with horizontal progress bars (60% / 70% / 80% / 90% of your max HR), and a Post-Workout Heart Rate chart for the two minutes after the match ended — useful for spotting recovery rate. The first time you open a match the iPhone asks for HealthKit permission so it can read your HR samples. Max HR is estimated from your age (220 − age) read from HealthKit; if you haven't set a date of birth there it falls back to age 30.</p>
